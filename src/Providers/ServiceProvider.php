@@ -23,6 +23,13 @@ class ServiceProvider extends BaseServiceProvider
         $this->bootCommands();
     }
 
+    /**
+     * Register the config and migration file for publishing
+     *
+     * @return void
+     * @author Roy Freij <Roy@bsbip.com>
+     * @version 2019-03-08
+     */
     protected function registerPublishments()
     {
         $this->publishes([
@@ -34,6 +41,13 @@ class ServiceProvider extends BaseServiceProvider
         ], 'migrations');
     }
 
+    /**
+     * Let Laravel know these commands are available
+     *
+     * @return void
+     * @author Roy Freij <Roy@bsbip.com>
+     * @version 2019-03-08
+     */
     private function bootCommands()
     {
         if ($this->app->runningInConsole()) {
